@@ -41,6 +41,7 @@ export default {
         const newTodo = {
           id: v4(),
           todo: this.input,
+          isCompleated: false,
         };
         this.input = "";
         this.$emit("add-todo", newTodo);
