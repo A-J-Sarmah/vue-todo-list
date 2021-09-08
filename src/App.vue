@@ -22,8 +22,11 @@ export default {
   },
   methods: {
     onReciveTodo(todo) {
-      console.log(todo);
-      console.log(this.todos);
+      this.todos = [...this.todos, todo];
+      localStorage.clear();
+      for (let i = 0; i < this.todos.length; i++) {
+        localStorage.setItem(i, JSON.stringify(this.todos[i]));
+      }
     },
   },
 };
